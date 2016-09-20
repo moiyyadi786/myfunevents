@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Create New Event</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="create-new-event">
+   <ion-list>
+    <form [ngFormModel]="createNewEvent">
+ 
+        <ion-item>
+            <ion-label floating>Event Name</ion-label>
+            <ion-input #eventName ngControl="eventName" type="text"></ion-input>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-input #description ngControl="description" type="text"></ion-input>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label floating>Event Date & Time</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY hh:mm A"  #eventDate ngControl="date" type="date" [(ngModel)]="currDate"></ion-datetime>
+        </ion-item>
+           <button block (click)="openPeopleModal()">
+          <ion-icon name="update"></ion-icon>Invite People</button>
+    </form>
+    </ion-list>
+          <button block (click)="onSubmit(createNewEvent.value)">
+          <ion-icon name="update"></ion-icon>Create Event</button>
+</ion-content>
