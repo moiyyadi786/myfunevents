@@ -28,7 +28,6 @@ export class HomePage {
               zoom: 12,
               mapTypeId: google.maps.MapTypeId.ROADMAP
           }
-          console.log(document.getElementById("map"));
           this.map = new google.maps.Map(document.getElementById("map"), mapOptions);
           this.map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
           var myLocation = new google.maps.Marker({
